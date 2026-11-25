@@ -1132,7 +1132,8 @@ static int count_chain_iobs(FAR struct iob_s *chain)
  * Name: test_iob_queue_extend_tail
  *
  * Description:
- *   Regression test for VELAPLATFO-93691 (fixed by commit a407e77448).
+ *   Regression test for 69c67a58493 ("mm/iob: fix stale qh_tail corrupting
+ *   enqueued multi-IOB chains").
  *
  *   iob_add_queue()/iob_concat_queue() used to link a newly enqueued chain
  *   directly onto iobq->qh_tail.  But a chain may be extended (e.g. via
